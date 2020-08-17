@@ -75,6 +75,16 @@ class TestSubnetCalculator(unittest.TestCase):
             '192.168.0.0/16'
         )
 
+    def test_0_bit_mask(self):
+        """Тест для адресов подсети с 0 битной маской."""
+
+        self.assertEqual(
+            calculate_subnet(
+                ['1.168.128.128', '15.168.15.66', '192.168.222.123']
+            ),
+            '0.0.0.0/0'
+        )
+
     def test_subnet_for_one_address(self):
         """Тест для списка из одного адреса."""
 
