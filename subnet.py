@@ -56,7 +56,7 @@ class TestSubnetCalculator(unittest.TestCase):
     """Ключевые тесты функции вычисления подсети."""
 
     def test_25_bit_mask(self):
-        """Тест для адресов с подсети с 25 битной маской."""
+        """Тест для адресов подсети с 25 битной маской."""
 
         self.assertEqual(
             calculate_subnet(
@@ -66,7 +66,7 @@ class TestSubnetCalculator(unittest.TestCase):
         )
 
     def test_16_bit_mask(self):
-        """Тест для адресов с подсети с 16 битной маской."""
+        """Тест для адресов подсети с 16 битной маской."""
 
         self.assertEqual(
             calculate_subnet(
@@ -81,7 +81,7 @@ class TestSubnetCalculator(unittest.TestCase):
         self.assertEqual(calculate_subnet(['192.168.1.192']), '192.168.1.192/32')
 
     def test_empty_list(self):
-        """Тест проверки передаваемого списка на наличие аргументов."""
+        """Тест проверки передаваемого списка на пустоту."""
 
         with self.assertRaises(EmptyIPList) as context_manager:
             calculate_subnet([])
